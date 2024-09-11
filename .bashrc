@@ -1,32 +1,34 @@
-# Display a welcome message with the username
+# Welcome message
 echo "Welcome, $USER!"
 
 # Aliases
-alias ls='ls -la'         # Alias for ls with -l and -a options
-alias ll='ls -la'         # Alias for ll with -l and -a options
-alias c='clear'           # Alias for clear
-alias grepc='grep --color=auto'  # Grep with color
+alias ll='ls -la'
+alias c='clear'
+alias grepc='grep --color=always'
+alias ..='cd ..'
 
-# Function to create a directory and move into it
+# Functions
 mkcd() {
     mkdir -p "$1" && cd "$1"
 }
 
-# Function to create a file and open it with vim
-mkvim() {
+mkfile() {
     touch "$1" && vim "$1"
 }
 
-# Customizing the PS1 prompt
-if [[ "$USER" != "your_pseudo" ]]; then
-    export PS1="\w\$ "
-fi
-
-# Function to perform case-insensitive grep
 mygrep() {
-    grep -i "$1"
+    grep -i "$@"
 }
 
-# Add ~/bin to the PATH
-export PATH="$HOME/bin:$PATH"
+# Customizing PS1
+USERNAME='yourusername'
+
+if [ "$USER" = "$USERNAME" ]; then
+    PS1='\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+fi
+
+# Export PATH
+export PATH="$PATH:$HOME/bin"
 
