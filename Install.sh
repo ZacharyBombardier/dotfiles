@@ -5,8 +5,8 @@
 mkdir -p ~/bin ~/cegep ~/projets
 
 # Step 2: Install required packages
-sudo apt update
-sudo apt install -y git vim gcc gdb python3 python3-pip python3-venv
+sudo pacman -Syu
+sudo pacman -S --noconfirm git vim gcc gdb python3 python3-pip python3-venv
 
 # Step 3: Copy dotfiles to home and .conf directories
 cp .bashrc ~/
