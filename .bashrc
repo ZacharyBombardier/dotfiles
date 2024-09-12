@@ -5,6 +5,7 @@ echo "Welcome, $USER!"
 alias ll='ls -la'         # Alias for ll with -l and -a options
 alias c='clear'           # Alias for clear
 alias grepc='grep --color=auto'  # Grep with color
+alias ..='cd ..'          # Alias for cd ..
 
 # Function to create a directory and move into it
 mkcd() {
