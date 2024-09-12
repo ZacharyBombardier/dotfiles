@@ -2,7 +2,6 @@
 echo "Welcome, $USER!"
 
 # Aliases
-alias ls='ls -la'         # Alias for ls with -l and -a options
 alias ll='ls -la'         # Alias for ll with -l and -a options
 alias c='clear'           # Alias for clear
 alias grepc='grep --color=auto'  # Grep with color
