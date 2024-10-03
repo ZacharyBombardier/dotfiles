@@ -7,6 +7,18 @@ alias c='clear'           # Alias for clear
 alias grepc='grep --color=auto'  # Grep with color
 alias ..='cd ..'          # Alias for cd ..
 
+# Function to find sections in the cheat sheet
+find_section() {
+    awk -v RS=">end_section<" -v title="$1" '
+        {
+            if ($0 ~ title) {
+                print $0;  # Print the entire section
+            }
+        }
+    ' ~/cegep/CheatSheetAndNotes/notesEtRaccourcis
+}
+
+
 # Function to create a directory and move into it
 mkcd() {
     mkdir -p "$1" && cd "$1"
@@ -29,4 +41,3 @@ mygrep() {
 
 # Add ~/bin to the PATH
 export PATH="$HOME/bin:$PATH"
-
