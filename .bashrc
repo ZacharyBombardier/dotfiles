@@ -15,7 +15,7 @@ find_section() {
                 print $0;  # Print the entire section
             }
         }
-    ' ~/cegep/CheatSheetAndNotes/notesEtRaccourcis
+    ' ~/cegep/dictionary/notesEtRaccourcis
 }
 
 
