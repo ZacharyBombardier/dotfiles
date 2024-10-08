@@ -18,6 +18,16 @@ find_section() {
     ' ~/cegep/dictionary/notesEtRaccourcis
 }
 
+find_ascii() {
+    # Vérifie si un caractère est passé en argument
+    if [ -z "$1" ]; then
+        echo "Veuillez fournir un caractère."
+        return 1
+    fi
+
+    # Utilise printf pour obtenir la valeur ASCII
+    printf "%d\n" "'$1"  # Affiche la valeur ASCII du caractère
+}
 
 # Function to create a directory and move into it
 mkcd() {
